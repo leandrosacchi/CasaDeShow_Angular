@@ -14,4 +14,20 @@ import { Component, OnInit, Input } from '@angular/core';
 export class FuncionarioCardComponent {
   @Input('obj') funcionario: any;
 
+  // getClassesCss() {
+  //   return ['badge', 'badge-primary'];
+
+  // }
+
+  isAdmin() {
+    return this.funcionario.nome.startsWith('T');
+  }
+
+  getEstilosCartao(){
+    return {
+      borderWidth: this.funcionario.id + 'px',
+        backgroundColor: this.funcionario.id % 2 === 0 ? 'lightyellow' : 'lightblue'
+      };
+  }
+
 }
